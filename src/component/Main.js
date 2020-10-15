@@ -1,13 +1,15 @@
 import React from 'react';
-import RocketFalcon from '../img/falcon-1.png'
+import RocketFalcon from '../img/falcon-1.png';
+import RelaxWrapper from 'react-rellax-wrapper';
 
-export default function Falcon() {
+
+const Falcon = ({ rocket }) => {
   return (
     <>
       <section className="main">
         <h1 className="title">
-          Falcon 1
-		    </h1>
+          {rocket}
+        </h1>
 
         <div className="video-container">
           <video className="video" autoPlay loop muted src="./video/moon.mp4"></video>
@@ -43,12 +45,12 @@ export default function Falcon() {
               </tr>
             </thead>
           </table>
-          <img
-            src={RocketFalcon}
-            alt="rocket"
-            className="rocket"
-            data-rellax-speed="14"
-          />
+          <RelaxWrapper speed={14}>
+            <img
+              src={RocketFalcon}
+              alt="rocket"
+              className="rocket" />
+          </RelaxWrapper>
           <article>
             <h3 className="features-subtitle">DESCRIPTION</h3>
             <p className="features-text">
@@ -59,4 +61,5 @@ export default function Falcon() {
       </section>
     </>
   )
-}
+};
+export default Falcon;

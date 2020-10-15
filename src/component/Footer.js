@@ -16,9 +16,7 @@ export default function Footer() {
         </nav>
         <p className="footer-text">
           For additional questions, contact
-			<a className="footer-link" href="mailto:rideshare@spacex.com"
-          >rideshare@spacex.com</a
-          >
+			<a className="footer-link" href="mailto:rideshare@spacex.com">rideshare@spacex.com</a>
         </p>
 
       </footer>

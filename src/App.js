@@ -1,18 +1,41 @@
 import React from 'react';
 import Header from './component/Header';
-import Falcon from './component/Falcon_1';
+import Main from './component/Main';
 import Footer from './component/Footer';
-import Calendar from './component/Calendar';
+import FetchData from './service/FetchData';
 
 
-function App() {
-  return (
-    <>
-      <Header />
-      <Falcon />
-      <Footer />
-    </>
-  );
+class App extends React.Component {
+
+  fetchData = new FetchData();
+
+  state = {
+    rocket: 'Falcon 1',
+    rocketFeatures: null,
+    rockets: [],
+  };
+
+  componentDidMount() {
+    this.updateRocket()
+  }
+
+  updateRocket() {
+    console.log(this.state);
+    this.fetchData.getRocket()
+      .then(data => data.find(item => item.name === this.state.rocket))
+      .then(rocketFeatures => this.setState({ rocketFeatures }, () => console.log(this.state)))
+  }
+
+
+  render() {
+    return (
+      <>
+        <Header />
+        <Main rocket={this.state.rocket} />
+        <Footer />
+      </>
+    )
+  }
 }
 
 export default App;
