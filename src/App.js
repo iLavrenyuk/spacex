@@ -3,6 +3,7 @@ import Header from './component/Header';
 import Main from './component/Main';
 import Footer from './component/Footer';
 import FetchData from './service/FetchData';
+import Features from './component/Features';
 
 
 class App extends React.Component {
@@ -13,25 +14,45 @@ class App extends React.Component {
     rocket: 'Falcon 1',
     rocketFeatures: null,
     rockets: [],
+    company: null,
   };
 
   componentDidMount() {
-    this.updateRocket()
+    this.updateRocket();
+    this.updateCompany();
   }
 
   updateRocket() {
-    console.log(this.state);
     this.fetchData.getRocket()
+      .then(data => {
+        this.setState({ rockets: data.map(item => item.name) })
+        return data
+      })
       .then(data => data.find(item => item.name === this.state.rocket))
-      .then(rocketFeatures => this.setState({ rocketFeatures }, () => console.log(this.state)))
+      .then(rocketFeatures => {
+        this.setState({ rocketFeatures });
+      })
+  }
+
+  changeRocket = rocket => {
+    this.setState({
+      rocket
+    }, this.updateRocket())
+  }
+
+  updateCompany = () => {
+    this.fetchData.getCompany()
+      .then(company => this.setState({ company }))
   }
 
 
   render() {
     return (
       <>
-        <Header />
+        <Header rockets={this.state.rockets}
+          changeRocket={this.changeRocket} />
         <Main rocket={this.state.rocket} />
+        {this.state.rocketFeatures && <Features {...this.state.rocketFeatures} />}
         <Footer />
       </>
     )
