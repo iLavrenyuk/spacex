@@ -1,6 +1,7 @@
 import React from 'react';
 import RelaxWrapper from 'react-rellax-wrapper';
 
+
 const rocketImages = {
   'Falcon 1': 'falcon-1',
   'Falcon 9': 'falcon-9',
@@ -8,19 +9,18 @@ const rocketImages = {
   'Starship': 'starship',
 }
 
-const Features = ({ name, height, diameter, mass, payload_weights, description }) => {
-
-  return (
+const Features = ({ name, height, diameter, mass, payload_weights, description }) => (
+  <>
     <section className="features">
       <h2 className="features-title">
         {name} <br />Overview
-  </h2>
+      </h2>
       <div className="overview">
 
         <table className="table">
           <caption className="table-title">
             Size
-      </caption>
+          </caption>
           <thead>
             <tr>
               <td className="table-column">HEIGHT</td>
@@ -52,11 +52,11 @@ const Features = ({ name, height, diameter, mass, payload_weights, description }
           <h3 className="features-subtitle">DESCRIPTION</h3>
           <p className="features-text">
             {description}
-      </p>
+          </p>
         </article>
       </div>
     </section>
-  )
-};
+  </>
+);
 
 export default Features;

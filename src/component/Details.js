@@ -1,8 +1,12 @@
 import React from 'react';
+import Main from './Main';
+import { Link } from 'react-router-dom';
+
 
 export default function Details() {
   return (
     <>
+      <Main />
       <main className="details">
         <div className="container">
           <div className="details-row">
@@ -15,11 +19,11 @@ export default function Details() {
           </div>
           <div>
             <iframe className="details-youtube" width="560" height="315" src="https://www.youtube.com/embed/dLQ2tZEH6G0"
-              frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen></iframe>
           </div>
         </div>
-        <a href="calendar.html" className="button button-back">go back</a>
+        <Link to="/calendar" className="button button-back">go back</Link>
       </main>
     </>
   )
