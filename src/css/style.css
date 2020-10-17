@@ -14,7 +14,7 @@ body {
 	min-width: 320px;
 	color: #fff;
 	font-size: 16px;
-	line-height: 1;
+	line-height: 20px;
 	margin: 0;
 	font-family: "Roboto", sans-serif;
 }
@@ -66,6 +66,8 @@ h1, h2, h3, p {
 	margin-right: 10px;
 	font-size: 16px;
 	line-height: 14px;
+	min-width: 61px;
+	display: flex;
 }
 
 /* header */
@@ -73,7 +75,7 @@ h1, h2, h3, p {
 .header {
 	max-width: 1230px;
 	width: 90%;
-	margin: 50px auto 120px;
+	margin: 50px auto 90px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -87,7 +89,7 @@ h1, h2, h3, p {
 }
 
 .item-link.active {
-	color: #33ff33;
+	color: #d30000;
 }
 
 @media (max-width: 768px) {
@@ -110,7 +112,7 @@ h1, h2, h3, p {
 
 .main {
 	text-align: center;
-	padding-bottom: 30px;
+	padding-bottom: 0px;
 }
 
 .title {
@@ -128,7 +130,7 @@ h1, h2, h3, p {
 	width: 1px;
 	height: 60px;
 	background-color: #fff;
-	margin: 26px auto auto;
+	margin: 16px auto auto;
 }
 
 .video-container {
@@ -283,8 +285,8 @@ h1, h2, h3, p {
 
 .button {
 	color: #fff;
-	min-width: 260px;
-	padding: 20px;
+	min-width: 150px;
+	padding: 15px;
 	text-align: center;
 	border: 2px solid #ffffff;
 	box-sizing: border-box;
@@ -331,19 +333,19 @@ h1, h2, h3, p {
 
 .launches {
 
-	width: 360px;
+	width: 260px;
 	height: 100%;
-	border: 1px white solid;
 	border-radius: 30px;
-	background-color: #111111;
+	background-color: #222222;
 	overflow: hidden;
-	padding: 30px;
+	padding: 40px;
 	text-align: left;
 }
 
 .launches-date {
-	font-size: 14px;
+	font-size: 16px;
 	margin-bottom: 15px;
+	margin-top: 15px;
 	display: block;
 }
 
@@ -376,7 +378,7 @@ h1, h2, h3, p {
 
 
 	.launches {
-		width: 310px;
+		width: 260px;
 	}
 }
 
@@ -400,6 +402,7 @@ h1, h2, h3, p {
 }
 
 .details-youtube {
+	width: 84%;
 	margin: 0 auto;
 	display: block;
 }

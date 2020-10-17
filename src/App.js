@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './component/Header';
 import Home from './component/Home';
-import Main from './component/Main';
 import Footer from './component/Footer';
 import FetchData from './service/FetchData';
 import Features from './component/Features';
@@ -55,20 +54,18 @@ class App extends React.Component {
       <BrowserRouter>
         <Header rockets={this.state.rockets}
           changeRocket={this.changeRocket} />
-        <Route exact path='/'>
-          {this.state.company && <Home company={this.state.company} />}
 
-        </Route>
-        <Route path='/rocket'>
-          <Main rocket={this.state.rocket} />
-          {this.state.rocketFeatures && <Features {...this.state.rocketFeatures} />}
-        </Route>
-        <Route path='/calendar'>
-          <Calendar />
-        </Route>
-        <Route path='/details'>
-          <Details />
-        </Route>
+        <Route exact path='/'
+          render={() => this.state.company &&
+            <Home company={this.state.company} />} />
+
+        <Route path='/rocket/:rocket'
+          render={({match}) => this.state.rocketFeatures &&
+            <Features {...this.state.rocketFeatures} match={match} />} />
+
+        <Route path='/calendar' component={Calendar} />
+        <Route path='/details/:id' component={Details} />
+
         {this.state.company && <Footer {...this.state.company} />}
       </BrowserRouter>
     )

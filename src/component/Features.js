@@ -1,5 +1,6 @@
 import React from 'react';
 import RelaxWrapper from 'react-rellax-wrapper';
+import Main from './Main';
 
 
 const rocketImages = {
@@ -11,6 +12,7 @@ const rocketImages = {
 
 const Features = ({ name, height, diameter, mass, payload_weights, description }) => (
   <>
+    <Main rocket={name} />
     <section className="features">
       <h2 className="features-title">
         {name} <br />Overview

@@ -16,13 +16,13 @@ const Header = (props) => (
 			<ul className="list">
 				{props.rockets.map((item, i) => (
 					<li key={i} className="item">
-						<Link
-							to="/rocket"
+						<NavLink activeClassName='active'
+							to={`/rocket/${item.replace(' ', '_')}`}
 							onClick={() => {
-								props.changeRocket(item)
+								props.changeRocket(item);
 							}}
 							className="item-link"
-						>{item}</Link>
+						>{item}</NavLink>
 					</li>
 				))}
 			</ul>
