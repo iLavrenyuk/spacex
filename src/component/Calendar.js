@@ -24,7 +24,7 @@ const Calendar = () => {
                     <div className="launches-content">
                       <h2 className="launches-title">{item.name}</h2>
                       <p className="launches-date">{item.date_local.slice(0,10)}</p>
-                      <Link to={`/details/${item.id}`} className="button launches-details">Подробнее</Link>
+                      <Link to={`/details/${item.id}`} className="button launches-details">Details</Link>
                     </div>
                   </article>
                 </li>
